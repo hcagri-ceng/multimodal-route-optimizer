@@ -2,11 +2,9 @@
 
 ## 1. Problem Statement
 
-Multimodal taşımacılıkta temel amacımız, farklı taşıma türlerini (kara, demir yolu, deniz ve hava yolu) birleştirerek toplam taşıma maliyetini minimize eden güzergâhı bulmaktır.
+Sistemin temel amacı, taşıma ağındaki bağlantıları kullanarak toplam maliyeti en düşük olan güzergâhı bulmaktır. Kullanıcı isteğe bağlı olarak azami bütçe ve azami teslimat süresi belirleyebilir. Bu kısıtlar sağlanırken en düşük maliyetli rota seçilir.
 
-Sistem, bulunan rotanın toplam süresini ve karbon emisyonunu da hesaplayıp raporlayacaktır. Kullanıcı isteğe bağlı olarak azami bütçe ve teslimat süresi kısıtları belirleyebilecektir. Bu durumda sistem, belirtilen kısıtları karşılayan en düşük maliyetli rotayı bulacaktır.
-
-Tek bir taşıma türü her zaman en uygun seçenek olmayabilir. Bazı noktalar arasında doğrudan bağlantı bulunmayabilir veya farklı taşıma türlerini birleştirmek daha düşük maliyetli bir güzergâh sağlayabilir.
+Kullanıcı azami teslimat süresi belirtmezse sistem, bütçe kısıtını sağlamak koşuluyla en düşük maliyetli rotayı seçer ve toplam tahmini süreyi raporlar. Karbon emisyonu hesaplanır ve kullanıcıya sunulur; ancak ilk sürümde optimizasyon hedefi değildir.
 
 ## 2. Inputs (Girdiler)
 
@@ -62,3 +60,4 @@ Bütçe ve süre sınırları isteğe bağlıdır. Kullanıcı bu sınırları b
 - Uygun rota bulunmadığında sistemin doğru sonucu bildirmesi.
 - Geçersiz girdilerin ve negatif maliyet, süre veya emisyon değerlerinin reddedilmesi.
 - Sonuçların otomatik testlerle doğrulanması.
+- Azami teslimat süresi belirtilmediğinde sistemin en düşük maliyetli rotayı seçtiğinin testlerle doğrulanması.
